@@ -5,23 +5,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Jury { //Evaluador
+public class Requerimiento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @Column(nullable = false, updatable = false)
-    private String name;
-    @Column(nullable = false, updatable = false)
-    private String lastname;
+    @ManyToMany(mappedBy = "requerimientos")
+    List<Plaza> plazas;
+    @Column(nullable = false)
+    private String nombre;
 
-    public Jury(String name, String lastname){
-        this.name = name;
-        this.lastname = lastname;
+    public Requerimiento(String nombre){
+        this.nombre = nombre;
     }
 }
