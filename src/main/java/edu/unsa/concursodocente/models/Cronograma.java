@@ -16,7 +16,7 @@ public class Cronograma {
     @Id
     private long id;
 
-    @OneToOne(mappedBy = "concurso")
+    @OneToOne(mappedBy = "cronograma")
     private Concurso concurso;
 
     @Temporal(TemporalType.DATE)
