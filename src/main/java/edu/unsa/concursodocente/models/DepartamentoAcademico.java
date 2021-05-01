@@ -11,15 +11,15 @@ import lombok.Data;
 
 @Data
 @Entity
-public class DepartamentoAcadémico {
+public class DepartamentoAcademico {
     @Id
-    private int id;
+    private long id;
 
     private String nombre;
 
     @Temporal(TemporalType.DATE)
     private Date created;
-    
+
     @Temporal(TemporalType.DATE)
     private Date modified;
 }

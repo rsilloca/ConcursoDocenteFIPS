@@ -9,6 +9,6 @@ import lombok.Data;
 @Entity
 public class Asignatura {
     @Id
-    private int Id;
+    private long Id;
     private String nombre;
 }
