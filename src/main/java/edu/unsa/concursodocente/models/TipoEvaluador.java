@@ -19,7 +19,7 @@ public class TipoEvaluador {
     String nombre;
     @Column(nullable = false)
     String descripcion;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoevaluador")
+    @OneToMany(mappedBy = "tipoEvaluador", cascade = CascadeType.ALL)
     private List<Evaluador> evaluadores;
 
     public TipoEvaluador(String nombre, String descripcion) {
