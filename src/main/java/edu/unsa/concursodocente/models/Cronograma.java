@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -11,21 +12,22 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Contest {
+public class Cronograma {
     @Id
     private long id;
 
-    private int academicYear;
+    @OneToOne(mappedBy = "concurso")
+    private Concurso concurso;
 
     @Temporal(TemporalType.DATE)
-    private Date callDate;
+    private Date fechaInicio;
 
     @Temporal(TemporalType.DATE)
-    private Date ballotDrawDate;
+    private Date fechaFin;
 
     @Temporal(TemporalType.DATE)
-    private Date masterClassDate;
+    private Date fechaClaseMagistral;
 
     @Temporal(TemporalType.DATE)
-    private Date facultyCouncilDate;
+    private Date fechaAprobación;
 }

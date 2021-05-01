@@ -7,8 +7,8 @@ import lombok.Data;
 
 @Data
 @Entity
-public class AcademicDepartment {
+public class Asignatura {
     @Id
-    private long id;
-    private String name;
+    private int Id;
+    private String nombre;
 }
