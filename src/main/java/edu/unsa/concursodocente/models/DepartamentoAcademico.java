@@ -22,6 +22,6 @@ public class DepartamentoAcademico {
     @Temporal(TemporalType.DATE)
     private Date modified;
 
-    @OneToMany(mappedBy = "departamentoAmericano", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "departamentoAcademico", cascade = CascadeType.ALL)
     private List<Plaza> plazas;
 }

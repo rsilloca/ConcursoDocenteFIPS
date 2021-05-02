@@ -31,11 +31,11 @@ public class Plaza {
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Requerimiento> requerimientos;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "plazas")
     private List<Asignatura> asignaturas;
 
     @OneToMany(mappedBy = "plaza", cascade = CascadeType.ALL)
-    private List<Evaluador> evaluadors;
+    private List<Evaluador> evaluadores;
 
     @ManyToOne
     private TipoVacante tipoVacante;

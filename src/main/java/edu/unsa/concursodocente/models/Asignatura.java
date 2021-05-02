@@ -12,7 +12,8 @@ public class Asignatura {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
-    @ManyToMany(mappedBy = "asignatura")
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Plaza> plazas;
     private String nombre;
+    //edu.unsa.concursodocente.models.Asignatura.plaza in edu.unsa.concursodocente.models.Plaza.asignaturas
 }
