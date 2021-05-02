@@ -13,12 +13,15 @@ import java.util.List;
 @Entity
 public class TipoEvaluador {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     @Column(nullable = false)
     String nombre;
+
     @Column(nullable = false)
     String descripcion;
+
     @OneToMany(mappedBy = "tipoEvaluador", cascade = CascadeType.ALL)
     private List<Evaluador> evaluadores;
 

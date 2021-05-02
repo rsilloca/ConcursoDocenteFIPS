@@ -12,19 +12,26 @@ import javax.persistence.*;
 @Entity
 public class Evaluador {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
     @Column(nullable = false)
     private String nombre;
+
     @Column(nullable = false)
     private String apellidos;
+
     @Column(nullable = false)
     private String dni;
+
     @Column(nullable = false)
     private String email;
+
     @ManyToOne
     private TipoEvaluador tipoEvaluador;
+
+    @ManyToOne
+    private Plaza plaza;
 
     public Evaluador(String nombre, String apellidos, String dni, String email) {
         this.nombre = nombre;

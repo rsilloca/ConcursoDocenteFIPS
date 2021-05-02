@@ -19,15 +19,26 @@ import java.util.List;
 @Entity
 public class Plaza {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Requerimiento> requerimientos;
+
     @Column(nullable = false)
     private int number;
-    //private Regimen regimen;
-    //private DepartamentoAcadémico departamentoAcadémico;
-    //private Concurso concurso;
+
+    @ManyToOne
+    private DepartamentoAcademico departamentoAcademico;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Requerimiento> requerimientos;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private List<Asignatura> asignaturas;
+
+    @OneToMany(mappedBy = "plaza", cascade = CascadeType.ALL)
+    private List<Evaluador> evaluadors;
+
+    //TipoVancancia
+    //Regimen
 
     public Plaza(int number){
         this.number = number;

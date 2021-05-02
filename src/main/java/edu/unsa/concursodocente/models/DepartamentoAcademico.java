@@ -1,13 +1,9 @@
 package edu.unsa.concursodocente.models;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -25,4 +21,7 @@ public class DepartamentoAcademico {
 
     @Temporal(TemporalType.DATE)
     private Date modified;
+
+    @OneToMany(mappedBy = "departamentoAmericano", cascade = CascadeType.ALL)
+    private List<Plaza> plazas;
 }

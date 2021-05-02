@@ -26,6 +26,7 @@ public class Concursante {
     private String nombres;
     private String apellidoPaterno;
     private String apellidoMaterno;
+    private String email;
 
     public String getNombreCompleto() {
         return nombres + " " + apellidoPaterno + " " + apellidoPaterno;
