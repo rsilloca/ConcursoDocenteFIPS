@@ -1,18 +1,20 @@
 package edu.unsa.concursodocente.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Data;
+
+import java.util.List;
 
 
 @Data
 @Entity
-@Table(name = "TipoVacante")
 public class TipoVacante {
 	@Id
 	long id;
 	String nombre;
 	String Descripcion;
+
+	@OneToMany(mappedBy = "tipoVacante", cascade = CascadeType.ALL)
+	private List<Plaza> plazas;
 }

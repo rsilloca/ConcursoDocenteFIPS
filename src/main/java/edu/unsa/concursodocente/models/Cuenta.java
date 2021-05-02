@@ -1,10 +1,6 @@
 package edu.unsa.concursodocente.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -18,4 +14,7 @@ public class Cuenta {
 	long id;
 	String email;
 	String password;
+
+	@OneToOne(cascade = CascadeType.ALL)
+	private Evaluador evaluador;
 }

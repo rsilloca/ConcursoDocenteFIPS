@@ -37,8 +37,11 @@ public class Plaza {
     @OneToMany(mappedBy = "plaza", cascade = CascadeType.ALL)
     private List<Evaluador> evaluadors;
 
-    //TipoVancancia
-    //Regimen
+    @ManyToOne
+    private TipoVacante tipoVacante;
+
+    @ManyToOne
+    private Regimen regimen;
 
     public Plaza(int number){
         this.number = number;

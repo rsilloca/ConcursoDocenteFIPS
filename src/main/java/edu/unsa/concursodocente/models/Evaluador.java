@@ -33,6 +33,9 @@ public class Evaluador {
     @ManyToOne
     private Plaza plaza;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    private Cuenta cuenta;
+
     public Evaluador(String nombre, String apellidos, String dni, String email) {
         this.nombre = nombre;
         this.apellidos = apellidos;
