@@ -43,10 +43,8 @@ public class ConcursoController {
     @PostMapping("concursos/{id}/fecha-inicio")
     public void añadirFechaInicio(long id, @RequestBody ConcursoFechaPostRequest request) {
         var concurso = repository.findById(id).orElseThrow();
-        if (concurso.getCronograma() == null) {
-            concurso.setCronograma(new Cronograma());
-            concurso.getCronograma().setFechaInicio(request.getFecha());
-        }
+        concurso.setCronograma(new Cronograma());
+        concurso.getCronograma().setFechaInicio(request.getFecha());
         repository.save(concurso);
     }
 }
