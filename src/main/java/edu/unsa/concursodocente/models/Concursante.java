@@ -17,7 +17,7 @@ public class Concursante {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "concursante",cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Nota nota;
 
