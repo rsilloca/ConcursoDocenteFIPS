@@ -28,7 +28,6 @@ public class ConcursoController {
         var response = repository.findAll().stream()
                 .map(concurso -> ConcursoDetailGetResponse.of(concurso))
                 .map(detail -> {
-
                     return detail;
                 }).collect(Collectors.toList());
         return response;

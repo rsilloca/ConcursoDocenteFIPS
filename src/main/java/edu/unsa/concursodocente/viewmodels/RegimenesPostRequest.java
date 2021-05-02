@@ -10,7 +10,7 @@ public class RegimenesPostRequest {
 	public String descripcion;
 	
 	
-	public Regimen toConcurso(){
+	public Regimen toRegimen(){
         var regimen = new Regimen();
         regimen.setNombre(this.nombre);
         regimen.setDescripcion(this.descripcion);
