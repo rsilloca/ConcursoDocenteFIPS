@@ -28,21 +28,20 @@ public class Plaza {
 
     @ManyToOne
     private DepartamentoAcademico departamentoAcademico;
-
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Requerimiento> requerimientos;
-
     @ManyToMany(mappedBy = "plazas")
     private Set<Asignatura> asignaturas;
-
     @OneToMany(mappedBy = "plaza", cascade = CascadeType.ALL)
     private Set<Evaluador> evaluadores;
-
     @ManyToOne
     private TipoVacante tipoVacante;
-
     @ManyToOne
     private Regimen regimen;
+    @OneToMany(mappedBy = "plaza", cascade = CascadeType.ALL)
+    private Set<Concursante> concursantes;
+    @ManyToOne
+    private Concurso concurso;
 
     public Plaza(int number){
         this.number = number;

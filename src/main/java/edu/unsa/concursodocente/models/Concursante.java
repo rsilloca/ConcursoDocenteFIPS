@@ -1,12 +1,6 @@
 package edu.unsa.concursodocente.models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.*;
 
 import lombok.Data;
 
@@ -27,7 +21,10 @@ public class Concursante {
     private String apellidoPaterno;
     private String apellidoMaterno;
 
+    @ManyToOne
+    private Plaza plaza;
+
     public String getNombreCompleto() {
-        return nombres + " " + apellidoPaterno + " " + apellidoPaterno;
+        return nombres + " " + apellidoPaterno + " " + apellidoMaterno;
     }
 }
