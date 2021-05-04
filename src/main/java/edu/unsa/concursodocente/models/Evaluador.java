@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
-
 import javax.persistence.*;
 
 @Data
@@ -31,9 +29,6 @@ public class Evaluador {
     private Plaza plaza;
     @OneToOne(cascade = CascadeType.ALL)
     private Cuenta cuenta;
-
-    @OneToMany(mappedBy = "evaluador")
-    private Set<NotaClase> notasClase;
 
     public Evaluador(String nombre, String apellidos, String dni, String email) {
         this.nombre = nombre;

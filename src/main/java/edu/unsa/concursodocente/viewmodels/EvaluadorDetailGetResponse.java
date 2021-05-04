@@ -1,4 +1,4 @@
-package edu.unsa.concursodocente.viewmodels;
+    package edu.unsa.concursodocente.viewmodels;
 
 import edu.unsa.concursodocente.models.Evaluador;
 import lombok.Builder;
@@ -22,11 +22,13 @@ public class EvaluadorDetailGetResponse {
                 .apellido(evaluador.getApellidos())
                 .dni(evaluador.getDni())
                 .email(evaluador.getEmail())
+                .plaza(PlazaGetResponse.of(evaluador.getPlaza()))
                 .build();
 
         if(evaluador.getTipoEvaluador() != null){
             response.setTipo(evaluador.getTipoEvaluador().getNombre());
         }
+
         return response;
     }
 }
