@@ -24,10 +24,10 @@ public class ConcursoDetailGetResponse {
             .periodo(concurso.getPeriodo())
             .build();
 
-        if(concurso.getCronograma() != null){
-            response.setFechaInicio(concurso.getCronograma().getFechaInicio());
-            response.setFechaFinal(concurso.getCronograma().getFechaFin());
-        }
+        
+        response.setFechaInicio(concurso.getCronograma().getFechaInicio());
+        response.setFechaFinal(concurso.getCronograma().getFechaFin());
+        
         return response;
     }
 }

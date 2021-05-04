@@ -16,9 +16,14 @@ public class Concurso {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(optional = false, mappedBy = "concurso",cascade = CascadeType.ALL)
     private Cronograma cronograma;
 
     private int añoAcadémico;
     private int periodo;
+
+    public Concurso(){
+        cronograma = new Cronograma();
+        cronograma.setConcurso(this);
+    }
 }

@@ -12,27 +12,21 @@ import javax.persistence.*;
 @Entity
 public class Evaluador {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
     @Column(nullable = false)
     private String nombre;
-
     @Column(nullable = false)
     private String apellidos;
-
     @Column(nullable = false)
     private String dni;
-
     @Column(nullable = false)
     private String email;
-
     @ManyToOne
     private TipoEvaluador tipoEvaluador;
-
     @ManyToOne
     private Plaza plaza;
-
     @OneToOne(cascade = CascadeType.ALL)
     private Cuenta cuenta;
 
