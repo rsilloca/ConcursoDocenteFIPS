@@ -27,6 +27,10 @@ public class Evaluador {
     private String email;
     @ManyToOne
     private TipoEvaluador tipoEvaluador;
+    @ManyToOne
+    private Plaza plaza;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Cuenta cuenta;
 
     @OneToMany(mappedBy = "evaluador")
     private Set<NotaClase> notasClase;

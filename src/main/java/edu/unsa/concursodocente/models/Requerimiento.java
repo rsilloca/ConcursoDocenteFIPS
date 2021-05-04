@@ -13,7 +13,7 @@ import java.util.List;
 @Entity
 public class Requerimiento {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
     @ManyToMany(mappedBy = "requerimientos")

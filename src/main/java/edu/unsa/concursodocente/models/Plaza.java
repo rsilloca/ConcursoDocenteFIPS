@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -19,15 +20,29 @@ import java.util.List;
 @Entity
 public class Plaza {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Requerimiento> requerimientos;
+
     @Column(nullable = false)
     private int number;
-    //private Regimen regimen;
-    //private DepartamentoAcadémico departamentoAcadémico;
-    //private Concurso concurso;
+
+    @ManyToOne
+    private DepartamentoAcademico departamentoAcademico;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Requerimiento> requerimientos;
+
+    @ManyToMany(mappedBy = "plazas")
+    private Set<Asignatura> asignaturas;
+
+    @OneToMany(mappedBy = "plaza", cascade = CascadeType.ALL)
+    private Set<Evaluador> evaluadores;
+
+    @ManyToOne
+    private TipoVacante tipoVacante;
+
+    @ManyToOne
+    private Regimen regimen;
 
     public Plaza(int number){
         this.number = number;
