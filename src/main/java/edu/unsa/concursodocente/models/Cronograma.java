@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -16,10 +17,10 @@ import lombok.Data;
 @Entity
 public class Cronograma {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne(mappedBy = "cronograma")
+    @OneToOne
+    @MapsId
     private Concurso concurso;
 
     @Temporal(TemporalType.DATE)
