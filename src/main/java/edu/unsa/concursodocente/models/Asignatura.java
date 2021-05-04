@@ -5,6 +5,7 @@ import javax.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -13,7 +14,7 @@ public class Asignatura {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
     @ManyToMany(cascade = CascadeType.ALL)
-    private List<Plaza> plazas;
+    private Set<Plaza> plazas;
     private String nombre;
     //edu.unsa.concursodocente.models.Asignatura.plaza in edu.unsa.concursodocente.models.Plaza.asignaturas
 }

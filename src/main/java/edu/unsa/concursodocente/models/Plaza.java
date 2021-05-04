@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -29,13 +30,13 @@ public class Plaza {
     private DepartamentoAcademico departamentoAcademico;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    private List<Requerimiento> requerimientos;
+    private Set<Requerimiento> requerimientos;
 
     @ManyToMany(mappedBy = "plazas")
-    private List<Asignatura> asignaturas;
+    private Set<Asignatura> asignaturas;
 
     @OneToMany(mappedBy = "plaza", cascade = CascadeType.ALL)
-    private List<Evaluador> evaluadores;
+    private Set<Evaluador> evaluadores;
 
     @ManyToOne
     private TipoVacante tipoVacante;

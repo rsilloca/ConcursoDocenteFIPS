@@ -5,6 +5,7 @@ import javax.persistence.*;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 
 @Data
@@ -16,5 +17,5 @@ public class TipoVacante {
 	String Descripcion;
 
 	@OneToMany(mappedBy = "tipoVacante", cascade = CascadeType.ALL)
-	private List<Plaza> plazas;
+	private Set<Plaza> plazas;
 }
