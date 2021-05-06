@@ -16,8 +16,8 @@ public class EvaluadorController {
     private EvaluadorRepository repository;
 
     @GetMapping("evaluadores/")
-    public List<EvaluadorDetailGetResponse> getEvaluadores(@PathVariable("id") Long id){
-        var response = repository.findById(id).stream()
+    public List<EvaluadorDetailGetResponse> getEvaluadores(){
+        var response = repository.findAll().stream()
                 .map(evaluador -> EvaluadorDetailGetResponse.of(evaluador))
                 .map(detail ->{
                     return detail;
