@@ -2,7 +2,10 @@ package edu.unsa.concursodocente.viewmodels;
 
 import java.util.List;
 
+import edu.unsa.concursodocente.models.DepartamentoAcademico;
 import edu.unsa.concursodocente.models.Plaza;
+import edu.unsa.concursodocente.models.Regimen;
+import edu.unsa.concursodocente.models.TipoVacante;
 import lombok.Builder;
 import lombok.Data;
 
@@ -18,13 +21,13 @@ public class PlazaGetResponse {
 
     public static PlazaGetResponse of(Plaza plaza){
         var response = builder()
-                .id(plaza.getId())
-                .tipo(plaza.getTipoVacante().getNombre())
-                .regimen(plaza.getRegimen().getNombreCroto())
-                .departamentoAcademico(plaza.getDepartamentoAcademico().getNombre())
-                //.requerimientos(plaza.getRequerimientos())
-                //.asignaturas(plaza.getAsignaturas())
-                .build();
+            .id(plaza.getId())
+            .tipo(new TipoVacante().getNombre())
+            .regimen(new Regimen().getNombreCroto())
+            .departamentoAcademico(new DepartamentoAcademico().getNombre())
+            //.requerimientos(plaza.getRequerimientos())
+            //.asignaturas(plaza.getAsignaturas())
+            .build();
         return response;
     }
 }

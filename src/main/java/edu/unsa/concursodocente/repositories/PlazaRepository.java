@@ -1,8 +1,16 @@
 package edu.unsa.concursodocente.repositories;
 
-import edu.unsa.concursodocente.models.Plaza;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
-public interface PlazaRepository extends JpaRepository<Plaza, Long> {
+import edu.unsa.concursodocente.models.Concursante;
+import edu.unsa.concursodocente.models.Plaza;
 
+
+
+public interface PlazaRepository extends JpaRepository<Plaza, Long>{
+    List<Plaza> findAllByConcursoId(long id);
 }
