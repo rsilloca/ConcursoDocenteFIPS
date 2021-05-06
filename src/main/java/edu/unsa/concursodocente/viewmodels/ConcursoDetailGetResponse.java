@@ -19,17 +19,17 @@ public class ConcursoDetailGetResponse {
 
     public static ConcursoDetailGetResponse of(Concurso concurso) {
         var response = builder()
-            .id(concurso.getId())
-            .añoAcademico(concurso.getAñoAcadémico())
-            .periodo(concurso.getPeriodo())
-            .build();
+                .id(concurso.getId())
+                .añoAcademico(concurso.getAñoAcadémico())
+                .periodo(concurso.getPeriodo())
+                .build();
 
-        
+
         response.setFechaInicio(concurso.getCronograma().getFechaInicio());
         response.setFechaFinal(concurso.getCronograma().getFechaFin());
 
-        response.setPlazas(concurso.getPlazas().stream().map(p -> PlazaGetResponse.of(p)));
-        
+        //response.setPlazas(concurso.getPlazas().stream().map(p -> PlazaGetResponse.of(p)));
+
         return response;
     }
 }

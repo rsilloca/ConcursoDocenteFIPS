@@ -21,13 +21,13 @@ public class PlazaGetResponse {
 
     public static PlazaGetResponse of(Plaza plaza){
         var response = builder()
-            .id(plaza.getId())
-            .tipo(new TipoVacante().getNombre())
-            .regimen(new Regimen().getNombreCroto())
-            .departamentoAcademico(new DepartamentoAcademico().getNombre())
-            //.requerimientos(plaza.getRequerimientos())
-            //.asignaturas(plaza.getAsignaturas())
-            .build();
+                .id(plaza.getId())
+                .tipo(new TipoVacante().getNombre())
+                .regimen(new Regimen().getNombreCroto())
+                .departamentoAcademico(new DepartamentoAcademico().getNombre())
+                //.requerimientos(plaza.getRequerimientos())
+                //.asignaturas(plaza.getAsignaturas())
+                .build();
         return response;
     }
 }
