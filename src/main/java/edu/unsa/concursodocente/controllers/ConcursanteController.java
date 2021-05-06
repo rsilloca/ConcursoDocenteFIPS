@@ -34,24 +34,8 @@ public class ConcursanteController {
         var response = repository.findById(id).orElseThrow();
         return ConcursanteDetailGetResponse.of(response);
     }
+   
+    public void colocarNotaEvaluacion(){
 
-    @GetMapping("concurso/{concursoId}/plazas/{plazaId}/postulantes")
-    public List<ConcursanteDetailGetResponse> getConcursantesPlaza(@PathVariable long concursoId, @PathVariable long plazaId){
-        var response= repository.findAllByPlazaId(plazaId).stream()
-                .map(concursante -> ConcursanteDetailGetResponse.of(concursante))
-                .map(detail ->{
-                    return detail;
-                }).collect(Collectors.toList());
-        return response;
-    }
-
-    @GetMapping("concurso/{concursoId}/plazas/{plazaId}/rankings")
-    public List<ConcursanteDetailGetResponse> getRankingsPlaza(@PathVariable long concursoId, @PathVariable long plazaId){
-        var response= repository.findRankingByPLazaId(plazaId).stream()
-                .map(concursante -> ConcursanteDetailGetResponse.of(concursante))
-                .map(detail ->{
-                    return detail;
-                }).collect(Collectors.toList());
-        return response;
     }
 }
