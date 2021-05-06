@@ -11,7 +11,7 @@ public class Concursante {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @OneToOne(mappedBy = "concursante",cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "concursante",cascade = CascadeType.ALL, optional = true)
     @PrimaryKeyJoinColumn
     private Nota nota;
 
@@ -21,7 +21,7 @@ public class Concursante {
     private String apellidoPaterno;
     private String apellidoMaterno;
 
-    @ManyToOne
+    @ManyToOne(optional = true)
     private Plaza plaza;
 
     public String getNombreCompleto() {

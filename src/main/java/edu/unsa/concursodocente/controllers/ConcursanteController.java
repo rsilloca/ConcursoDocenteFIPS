@@ -4,10 +4,9 @@ import edu.unsa.concursodocente.repositories.ConcursanteRepository;
 import edu.unsa.concursodocente.repositories.ConcursoRepository;
 import edu.unsa.concursodocente.repositories.PlazaRepository;
 import edu.unsa.concursodocente.viewmodels.ConcursanteDetailGetResponse;
+import edu.unsa.concursodocente.viewmodels.ConcursantePostRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,8 +15,6 @@ import java.util.stream.Collectors;
 public class ConcursanteController {
     @Autowired
     private ConcursanteRepository repository;
-    private PlazaRepository plazaRepository;
-    private ConcursoRepository concursoRepository;
 
     @GetMapping("concursantes/")
     public List<ConcursanteDetailGetResponse> getConcursantes(){
@@ -33,6 +30,13 @@ public class ConcursanteController {
     public ConcursanteDetailGetResponse getInfoConcursante(@PathVariable("id") Long id){
         var response = repository.findById(id).orElseThrow();
         return ConcursanteDetailGetResponse.of(response);
+    }
+
+    @PostMapping("concursos/{concursoId}/plazas/concursantes")
+    public ConcursanteDetailGetResponse createConcursante(@RequestBody ConcursantePostRequest request){
+        var concursante = request.toConcursante();
+        repository.save(concursante);
+        return ConcursanteDetailGetResponse.of(concursante);
     }
 
     @GetMapping("concurso/{concursoId}/plazas/{plazaId}/postulantes")
