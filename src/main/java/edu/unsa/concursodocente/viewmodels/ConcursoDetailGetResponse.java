@@ -2,6 +2,7 @@ package edu.unsa.concursodocente.viewmodels;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import edu.unsa.concursodocente.models.Concurso;
 import lombok.Builder;
@@ -28,7 +29,7 @@ public class ConcursoDetailGetResponse {
         response.setFechaInicio(concurso.getCronograma().getFechaInicio());
         response.setFechaFinal(concurso.getCronograma().getFechaFin());
 
-        response.setPlazas(concurso.getPlazas().stream().map(p -> PlazaGetResponse.of(p)));
+        response.setPlazas(concurso.getPlazas().stream().map(p -> PlazaGetResponse.of(p)).collect(Collectors.toList()));
         
         return response;
     }
