@@ -3,6 +3,7 @@ package edu.unsa.concursodocente.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import edu.unsa.concursodocente.viewmodels.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,10 +16,6 @@ import edu.unsa.concursodocente.models.Cronograma;
 import edu.unsa.concursodocente.repositories.ConcursoRepository;
 import edu.unsa.concursodocente.repositories.CronogramaRepository;
 import edu.unsa.concursodocente.services.ConcursoService;
-import edu.unsa.concursodocente.viewmodels.ConcursoDetailGetResponse;
-import edu.unsa.concursodocente.viewmodels.ConcursoFechaPostRequest;
-import edu.unsa.concursodocente.viewmodels.ConcursoPostRequest;
-import edu.unsa.concursodocente.viewmodels.CronogramaPostRequest;
 
 
 @RestController
