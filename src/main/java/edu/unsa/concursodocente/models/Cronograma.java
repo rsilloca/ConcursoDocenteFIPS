@@ -12,8 +12,10 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
+@EqualsAndHashCode(of="id")
 @Entity
 public class Cronograma {
     @Id

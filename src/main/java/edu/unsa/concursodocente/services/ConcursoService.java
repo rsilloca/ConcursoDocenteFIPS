@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import edu.unsa.concursodocente.models.Concurso;
 import edu.unsa.concursodocente.models.Cronograma;
 import edu.unsa.concursodocente.repositories.ConcursoRepository;
+import edu.unsa.concursodocente.repositories.PlazaRepository;
 import edu.unsa.concursodocente.viewmodels.ConcursoDetailGetResponse;
 import edu.unsa.concursodocente.viewmodels.ConcursoPostRequest;
 import edu.unsa.concursodocente.viewmodels.CronogramaPostRequest;
@@ -17,6 +18,8 @@ import edu.unsa.concursodocente.viewmodels.CronogramaPostRequest;
 public class ConcursoService {
     @Autowired
     private ConcursoRepository concursoRepository;
+    @Autowired
+    private PlazaRepository plazaRepository;
 
     public List<ConcursoDetailGetResponse> obtenerTodosLosConcursos(){
         var concursos = concursoRepository.findAll()

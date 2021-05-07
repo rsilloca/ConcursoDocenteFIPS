@@ -29,7 +29,13 @@ public class ConcursoDetailGetResponse {
         response.setFechaInicio(concurso.getCronograma().getFechaInicio());
         response.setFechaFinal(concurso.getCronograma().getFechaFin());
 
-        response.setPlazas(concurso.getPlazas().stream().map(p -> PlazaGetResponse.of(p)).collect(Collectors.toList()));
+        response.setPlazas(
+            concurso.getPlazas()
+                .stream()
+                .map(p -> PlazaGetResponse.of(p))
+                .collect(Collectors.toList()
+            )
+        );
         
         return response;
     }

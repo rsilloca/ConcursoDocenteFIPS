@@ -3,10 +3,14 @@ package edu.unsa.concursodocente.models;
 import javax.persistence.*;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@EqualsAndHashCode(of="id")
 @Entity
 public class Concurso {
     @Id
@@ -24,5 +28,7 @@ public class Concurso {
     public Concurso(){
         cronograma = new Cronograma();
         cronograma.setConcurso(this);
+
+        plazas = new HashSet<Plaza>();
     }
 }
