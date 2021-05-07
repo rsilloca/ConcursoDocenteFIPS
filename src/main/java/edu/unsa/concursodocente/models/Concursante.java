@@ -21,7 +21,8 @@ public class Concursante {
     private String apellidoPaterno;
     private String apellidoMaterno;
 
-    @ManyToOne(optional = true)
+    @ManyToOne(optional = true, cascade = CascadeType.DETACH)
+    //@Column(name = "plaza_id")
     private Plaza plaza;
 
     public String getNombreCompleto() {
