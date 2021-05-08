@@ -11,7 +11,7 @@
 	<groupId>edu.unsa</groupId>
 	<artifactId>concurso-docente</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>concurso-docente</name>
 	<description>Sistema de concurso docente para el curso Sistemas Distribuidos</description>
 	<properties>
