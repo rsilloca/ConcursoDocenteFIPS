@@ -6,3 +6,8 @@ target/
 .settings/
 .project
 .factorypath
+
+# Ignore Intellij IDEA files
+
+concurso-docente.iml
+.idea/
