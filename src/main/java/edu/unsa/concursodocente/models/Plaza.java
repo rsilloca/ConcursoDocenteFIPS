@@ -40,6 +40,7 @@ public class Plaza {
     private Set<Concursante> concursantes;
     @ManyToOne
     private Concurso concurso;
+    private boolean estado;
 
     public Plaza(int number){
         this.number = number;

@@ -24,6 +24,7 @@ public class Concurso {
 
     private int añoAcadémico;
     private int periodo;
+    private boolean estado;
 
     public Concurso(){
         cronograma = new Cronograma();

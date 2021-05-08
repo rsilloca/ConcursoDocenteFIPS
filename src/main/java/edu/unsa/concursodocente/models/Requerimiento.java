@@ -20,6 +20,8 @@ public class Requerimiento {
     List<Plaza> plazas;
     @Column(nullable = false)
     private String nombre;
+    
+    private boolean estado;
 
     public Requerimiento(String nombre){
         this.nombre = nombre;

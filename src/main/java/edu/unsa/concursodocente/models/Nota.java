@@ -28,4 +28,5 @@ public class Nota {
 
     @OneToMany(mappedBy = "nota")
     private Set<NotaClase> notasClase;
+    private boolean estado;
 }

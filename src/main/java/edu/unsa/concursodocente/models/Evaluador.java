@@ -31,6 +31,8 @@ public class Evaluador {
     private Plaza plaza;
     @OneToOne(cascade = CascadeType.ALL)
     private Cuenta cuenta;
+    
+    private boolean estado;
 
     @OneToMany(mappedBy = "evaluador")
     private Set<NotaClase> notasClase;

@@ -36,4 +36,5 @@ public class Cronograma {
 
     @Temporal(TemporalType.DATE)
     private Date fechaAprobación;
+    private boolean estado;
 }

@@ -22,4 +22,5 @@ public class NotaClase {
     private Evaluador evaluador;
 
     private int notaEvaluador;
+    private boolean estado;
 }

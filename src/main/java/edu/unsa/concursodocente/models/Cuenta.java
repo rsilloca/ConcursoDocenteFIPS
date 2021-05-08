@@ -14,7 +14,11 @@ public class Cuenta {
 	long id;
 	String email;
 	String password;
+	private boolean estado;
+
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private Evaluador evaluador;
+	
+	
 }

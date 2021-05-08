@@ -23,6 +23,8 @@ public class Concursante {
 
     @ManyToOne
     private Plaza plaza;
+    
+    private boolean estado;
 
     public String getNombreCompleto() {
         return nombres + " " + apellidoPaterno + " " + apellidoMaterno;

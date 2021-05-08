@@ -18,4 +18,5 @@ public class TipoVacante {
 
 	@OneToMany(mappedBy = "tipoVacante", cascade = CascadeType.ALL)
 	private Set<Plaza> plazas;
+	private boolean estado;
 }

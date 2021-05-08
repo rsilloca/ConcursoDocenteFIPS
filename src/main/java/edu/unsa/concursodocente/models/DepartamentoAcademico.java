@@ -24,4 +24,5 @@ public class DepartamentoAcademico {
 
     @OneToMany(mappedBy = "departamentoAcademico", cascade = CascadeType.ALL)
     private List<Plaza> plazas;
+    private boolean estado;
 }

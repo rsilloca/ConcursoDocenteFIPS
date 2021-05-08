@@ -24,6 +24,8 @@ public class TipoEvaluador {
 
     @OneToMany(mappedBy = "tipoEvaluador", cascade = CascadeType.ALL)
     private List<Evaluador> evaluadores;
+    
+    private boolean estado;
 
     public TipoEvaluador(String nombre, String descripcion) {
         this.nombre = nombre;

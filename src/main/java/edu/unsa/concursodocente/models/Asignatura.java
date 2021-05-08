@@ -16,5 +16,6 @@ public class Asignatura {
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Plaza> plazas;
     private String nombre;
+    private boolean estado;
     //edu.unsa.concursodocente.models.Asignatura.plaza in edu.unsa.concursodocente.models.Plaza.asignaturas
 }

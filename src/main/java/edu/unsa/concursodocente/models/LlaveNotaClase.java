@@ -11,5 +11,6 @@ import lombok.Data;
 @Embeddable
 public class LlaveNotaClase implements Serializable{
     private Long notaId;
-    private Long evaluadorId; 
+    private Long evaluadorId;
+    private boolean estado;
 }
