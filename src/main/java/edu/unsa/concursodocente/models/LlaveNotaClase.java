@@ -12,5 +12,4 @@ import lombok.Data;
 public class LlaveNotaClase implements Serializable{
     private Long notaId;
     private Long evaluadorId;
-    private boolean estado;
 }
